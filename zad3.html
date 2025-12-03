@@ -1,0 +1,14 @@
+<ol id="lista"></ol>
+
+<button onclick="dodaj()">Dodaj element</button>
+
+<script>
+let nr = 1;
+
+function dodaj() {
+    const li = document.createElement("li");
+    li.textContent = "element " + nr;
+    lista.appendChild(li);
+    nr++;
+}
+</script>

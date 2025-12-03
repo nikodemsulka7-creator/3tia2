@@ -1,0 +1,6 @@
+<script>
+    let tekst="tel. 353257334";
+    var wzorzec = /\d\d\d\d\d\d\d\d\d/;
+    var pozycja=tekst.search(wzorzec);
+    document.writeln('cyfry znaleziono na pozycji: '+pozycja)
+</script>
