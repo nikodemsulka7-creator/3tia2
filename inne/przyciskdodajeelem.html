@@ -1,0 +1,11 @@
+<ul id="lista"></ul>
+
+<button onclick="dodaj()">Dodaj element</button>
+
+<script>
+function dodaj() {
+    const li = document.createElement("li");
+    li.textContent = "Nowy element";
+    lista.appendChild(li);
+}
+</script>
