@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+    div{
+        width:200px;
+        height:100px;
+        border:1px solid black;
+        margin-top:10px;
+    }
+</style>
+</head>
+<body>
+
+
+<form>
+    <label>Ustaw kolor (czerwony 0-255):<br>
+        0
+        <input type="range" min="0" max="255" id="kolor">
+        255
+    </label>
+</form>
+
+<div id="box"></div>
+
+<br><br>
+
+
+<form>
+    <label>Ustaw wartość liczbową (1-100):<br>
+        1
+        <input type="range" min="1" max="100" id="liczba">
+        100
+    </label>
+</form>
+
+<p>Wybrana wartość: <span id="wynik">1</span></p>
+
+<br><br>
+
+
+<form>
+    <label>Podaj wiek (0-130):<br>
+        0
+        <input type="range" min="0" max="130" id="wiek">
+        130
+    </label>
+</form>
+
+<p id="walidacja"></p>
+
+<script>
+    // 1. Kolor
+    let kolor = document.querySelector("#kolor");
+    let box = document.querySelector("#box");
+
+    kolor.addEventListener("input", function(){
+        box.style.background = `rgb(${kolor.value},0,0)`;
+    });
+
+    
+    let liczba = document.querySelector("#liczba");
+    let wynik = document.querySelector("#wynik");
+
+    liczba.addEventListener("input", function(){
+        wynik.textContent = liczba.value;
+    });
+
+    
+    let wiek = document.querySelector("#wiek");
+    let walidacja = document.querySelector("#walidacja");
+
+    wiek.addEventListener("input", function(){
+        if(wiek.value < 18){
+            walidacja.textContent = "Nie jesteś pełnoletni.";
+            walidacja.style.color = "red";
+        } else {
+            walidacja.textContent = "Jesteś pełnoletni.";
+            walidacja.style.color = "green";
+        }
+    });
+</script>
+
+</body>
+</html>
