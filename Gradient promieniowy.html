@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="400" height="200" id="canvas"></canvas>
+    <script>
+        const canvas = document.querySelector("#canvas")
+        const ctx=canvas.getContext("2d");
+        //utworzenie wewnetrznego kola (x=110, y=90, promien = 30)
+        //utworzenie zewnetrznego kola (x=100,y=100, promien = 70)
+        const gradient = ctx.createRadialGradient(110,90,30,100,100,70);
+
+
+        //Dodanie następujących po sobie kolorów
+        gradient.addColorStop(0,"pink")
+        gradient.addColorStop(0.9,"white")
+        gradient.addColorStop(1,"green")
+
+        ctx.fillStyle =gradient
+        ctx.fillRect(20,20,160,160)
+    </script>
+</body>
+</html>
