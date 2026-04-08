@@ -1,0 +1,17 @@
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+    $("button").click(function(){
+        $("div")
+            .animate({ left: '250px' })   
+            .animate({ top: '250px' })    
+            .animate({ left: '0px' })     
+            .animate({ top: '0px' });     
+    });
+});
+</script>
+
+<button>Start animation</button>
+
+<div style="background:green;height:100px;width:100px;position:absolute;"></div>
